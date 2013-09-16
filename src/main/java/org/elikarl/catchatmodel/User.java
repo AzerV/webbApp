@@ -9,22 +9,34 @@ package org.elikarl.catchatmodel;
  * @author elikarl
  */
 public class User {
-    String name;
-    String password;
+    private Double id;
+    private String name;
+    private String password;
+    private Contacts contacts;
     
-    public User(String name, String password){
+    public User(Double id, String name, String password){
+        this.id = id;
         this.name = name;
         this.password = password;
+        contacts = null;
     }
     
-    private String getPasszord(){
+    public Double getId(){
+        return id;
+    }
+    
+    public String getPassword(){
         return password;
     }
-    private String getName(){
+    public String getName(){
         return name;
     }
-    private void hej(){
-        int a =0;
+    public Contacts getContacts(){
+        return contacts;
+    }
+    
+    public void addContact(User cName){
+        contacts.add(cName);
     }
     
 }
