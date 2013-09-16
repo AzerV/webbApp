@@ -23,5 +23,8 @@ public class User {
     private String getName(){
         return name;
     }
+    private void hej(){
+        int a =0;
+    }
     
 }
