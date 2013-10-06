@@ -18,7 +18,12 @@
         <id>EclipseLink</id>
         <url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
      </repository>
-    </repositories>
+    <repository>
+        <id>unknown-jars-temp-repo</id>
+        <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
+        <url>file:${project.basedir}/lib</url>
+    </repository>
+</repositories>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
