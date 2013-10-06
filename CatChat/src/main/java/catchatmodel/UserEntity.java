@@ -13,13 +13,13 @@ import java.util.List;
  * @author elikarl
  */
 public class UserEntity {
-    private List<User> elems;
+    private List<Username> elems;
     
     public UserEntity(){
-        elems = new ArrayList<User>();
+        elems = new ArrayList<Username>();
     }
 
-    public void add(User t) {
+    public void add(Username t) {
         if (t == null) {
             throw new IllegalArgumentException("Nulls not allowed");
         }
@@ -27,22 +27,22 @@ public class UserEntity {
     }
 
     public void remove(String id) {
-        User t = find(id);
+        Username t = find(id);
         if (t != null) {
             elems.remove(t);
         }
     }
 
-    public void update(User t) {
-        User old = find(t.getName());
+    public void update(Username t) {
+        Username old = find(t.getName());
         if (old != null) {
             elems.remove(old);
         }
         elems.add(t);
     }
 
-    public User find(String name) {
-        for (User t : elems) {
+    public Username find(String name) {
+        for (Username t : elems) {
             if (t.getName().equals(name)) { // NOTE: equals, not ==
                 return t;
             }
@@ -50,7 +50,7 @@ public class UserEntity {
         return null;
     }
 
-    public List<User> getRange(int first, int nItems) {
+    public List<Username> getRange(int first, int nItems) {
         // From inclusive, to exclusive
         return elems.subList(first, first + nItems);
     }

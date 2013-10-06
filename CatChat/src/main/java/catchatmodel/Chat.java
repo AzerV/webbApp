@@ -3,6 +3,8 @@ package catchatmodel;
 import java.util.ArrayList;
 import java.util.List;
 import catchatmodel.UserEntity;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this template, choose Tools | Templates
@@ -13,11 +15,15 @@ import catchatmodel.UserEntity;
  *
  * @author elikarl
  */
-public class Chat {
+public class Chat extends AbstractDAO<Username, Long>{
     UserEntity ue;
+    String pun;
     
-    public Chat() {
-
+    public Chat(String persistenceUnitName) {
+        super(Username.class, persistenceUnitName);
+        // pun = persistenceUnitName;
+        Logger.getAnonymousLogger().log(Level.INFO, "Shop alive {0}", this.hashCode());
+    
     }
 
     

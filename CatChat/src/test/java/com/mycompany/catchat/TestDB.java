@@ -4,7 +4,9 @@
  */
 package com.mycompany.catchat;
 
-import catchatmodel.User;
+import catchatmodel.Chat;
+import catchatmodel.ChatFactory;
+import catchatmodel.Username;
 import java.util.List;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -15,27 +17,33 @@ import org.junit.Test;
  */
 public class TestDB {
     //static IShop shop;
+    static Chat chat;
     final static String PU = "catchat_pu";
+    
+    final static String TEST_PU = "catchat_test_pu";
 
     @Before // Run before each test
     public void before() {
         //shop = JPAShopFactory.getShop(PU);
+        chat = ChatFactory.getChat(TEST_PU);
     }
     
     
     @Test
     public void testAddUser() {
         
-       User u = new User("elin", "elin");
+       Username u = new Username("elin", "elin");
         
         //IProductCatalogue pc = shop.getProductCatalogue();
+       chat.add(u);
+       chat.add(new Username("Nora", "Nora"));
         
-        for( int i = 0; i < 10 ; i++){
           //  pc.add(new Product(String.valueOf(i), i));
-        }
-       // List<Product> ps = pc.getRange(2, 3);
+        
+       List<Username> l = chat.getRange(0, 1);
         //System.out.println(ps.size());
-        //System.out.println(ps);
-        //assertTrue(ps.size() == 2);
+        //System.out.println(ps
+       System.out.println(l.size());
+        assertTrue(l.size() == 2);
     }   
 }

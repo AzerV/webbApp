@@ -20,18 +20,15 @@ public class ChatFactory {
     }
     
         // If initTestData there will be some data to use
-    public static Chat getShop(boolean initTestData) {
-        Chat c = new Chat();
-        if (initTestData) {
-            initTestData(c);
-        }
+    public static Chat getChat(String persistenceUnitName) {
+        Chat c = new Chat(persistenceUnitName);
         return c;
     }
     
     private static void initTestData(Chat c){
-        c.getUserList().add(new User(Long.parseLong("1"), "Elin","a"));
-        c.getUserList().add(new User(Long.parseLong("2"), "Nora", "b"));
-        c.getUserList().add(new User(Long.parseLong("3"), "Magnus", "c"));
+        c.getUserList().add(new Username(Long.parseLong("1"), "Elin","a"));
+        c.getUserList().add(new Username(Long.parseLong("2"), "Nora", "b"));
+        c.getUserList().add(new Username(Long.parseLong("3"), "Magnus", "c"));
         
         
     }    

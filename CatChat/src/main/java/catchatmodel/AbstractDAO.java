@@ -38,7 +38,11 @@ public abstract class AbstractDAO<T,K> {
             em.getTransaction().begin();
             em.persist(t);
             em.getTransaction().commit();
+            
+            System.out.println("JAAAAAAAAAAAAAA");
         } catch (Exception ex) {
+            
+            System.out.println("NEEEEEEEEEEEEEEEEEJ");
             ex.printStackTrace();
         } finally {
             if (em.getTransaction().isActive()) {
