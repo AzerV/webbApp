@@ -29,9 +29,9 @@ public class ChatFactory {
     }
     
     private static void initTestData(Chat c){
-        c.getUserList().add(new User(Double.parseDouble("1"), "Elin","a"));
-        c.getUserList().add(new User(Double.parseDouble("2"), "Nora", "b"));
-        c.getUserList().add(new User(Double.parseDouble("3"), "Magnus", "c"));
+        c.getUserList().add(new User(Long.parseLong("1"), "Elin","a"));
+        c.getUserList().add(new User(Long.parseLong("2"), "Nora", "b"));
+        c.getUserList().add(new User(Long.parseLong("3"), "Magnus", "c"));
         
         
     }    
