@@ -18,11 +18,17 @@ and open the template in the editor.
         <div style="clear:both"></div>  
     </div>  
       
-    <form name="login" action="">  
-        <p>Username: <input name="username" type="text" id="username" size="30" /></p>
-        <p>Password: <input name="password" type="text" id="password" size="30" /></p>
-        <input name="submitmsg" type="submit"  id="submitmsg" value="Register" />  
-    </form>  
+    <h:form>  
+        <h:panelGrid columns="3">
+            <h:outputText value="Username:" />
+            <h:inputText id="username" value="#{addUser.username}"/>
+            <h:message for="username" />
+            <h:outputText value="Password" />
+            <h:inputText id="password" value="#{addUser.password}"/>
+            <h:message for="password" />
+        </h:panelGrid>
+        <h:commandButton action="#{addUser.register}" value="Register" />
+    </h:form>  
 </div>   
 </body>  
 </html> 

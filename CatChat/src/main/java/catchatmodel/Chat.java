@@ -1,8 +1,5 @@
 package catchatmodel;
 
-import java.util.ArrayList;
-import java.util.List;
-import catchatmodel.UserEntity;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
