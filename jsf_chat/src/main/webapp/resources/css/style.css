@@ -29,9 +29,16 @@ a {
     margin:0 auto;  
     padding-bottom:25px;  
     background:#EBF4FB;  
-    width:615px;  
+    width:300px;  
     border:1px solid #ACD8F0; }  
    
+#chatroom {  
+    margin:0 auto;  
+    padding-bottom:25px;  
+    background:#EBF4FB;  
+    width:615px;  
+    border:1px solid #ACD8F0; }  
+
 #loginform { padding-top:18px; }  
    
     #loginform p { margin: 5px; }  

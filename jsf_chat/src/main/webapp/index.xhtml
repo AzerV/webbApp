@@ -15,22 +15,23 @@ and open the template in the editor.
     <div id="menu">
         <h1>CatChat</h1>
         <a href="jsf/register.xhtml">Sign up</a> 
+        <br></br>
+        <a href="jsf/chatroom.xhtml">Chatroom</a> 
         <div style="clear:both"></div>  
         <br></br>
-        <p><img src="resources/img/Cat.jpg" alt="http://images.wikia.com/uncyclopedia/images/f/fa/Cat_using_computer.jpg" width="150" height="100"/></p>
-
+        <p><img src="resources/img/Cat.jpg" alt="http://images.wikia.com/uncyclopedia/images/f/fa/Cat_using_computer.jpg" width="200" height="150"/></p>
     </div>  
      <h:form>  
          <h:panelGroup>
             <h:outputText value="Username:" />
-            <h:inputText id="username" value="#{login.username}"/>
+            <h:inputText id="username" value="#{loginUser.username}"/>
             <h:message for="username" />
             <br></br>
             <h:outputText value="Password:" />
-            <h:inputText id="password" value="#{login.password}"/>
+            <h:inputText id="password" value="#{loginUser.password}"/>
             <h:message for="password" />
             <br></br><br></br>
-            <h:commandButton action="#{login.login}" value="Login" />
+            <h:commandButton action="#{loginUser.login}" value="Login"/>
          </h:panelGroup>
     </h:form>
 </div>   

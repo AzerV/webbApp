@@ -5,6 +5,7 @@
 package catchatbb;
 
 import catchatmodel.Chat;
+import catchatmodel.ChatFactory;
 import catchatmodel.Username;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
@@ -21,14 +22,12 @@ public class AddUserBB {
     private String username;
     @NotNull
     private String password;
-    
+    final static String PU = "catchat_pu";
     private Chat chat;
     
     public void register() {        
         Username user = new Username(username, password);
-        System.out.println(user.getName());
-        System.out.println(user.getPassword());
-        
+        chat = ChatFactory.getChat(PU);
         chat.add(user);
     }
     

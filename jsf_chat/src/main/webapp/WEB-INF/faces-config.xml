@@ -11,13 +11,13 @@
      </application>
     <!-- Login page -->
     <navigation-rule>
-        <from-view-id>index.xhtml</from-view-id>
+        <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>register</from-outcome>
             <to-view-id>/jsf/register.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>login</from-outcome>
+            <from-outcome>LOGIN_SUCCESS</from-outcome>
             <to-view-id>/jsf/chatroom.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>   
