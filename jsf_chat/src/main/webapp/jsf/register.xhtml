@@ -12,23 +12,22 @@ and open the template in the editor.
 </head>  
 <body>  
 <div id="wrapper">  
-    <div id="menu">
-        <a href="../index.xhtml">Home</a>  
+    <div id="menu">  
+        <p class="welcome">CatChat<b></b></p>  
+        <h:button outcome="home" value="Home" class="small-button"/>  
         <div style="clear:both"></div>  
     </div>  
       
     <h:form>  
-        <h:panelGroup>
-            <h:outputText value="Username: " />
+        <h:panelGrid columns="3">
+            <h:outputText value="Username:" />
             <h:inputText id="username" value="#{addUser.username}"/>
             <h:message for="username" />
-            <br></br>
-            <h:outputText value="Password: " />
+            <h:outputText value="Password" />
             <h:inputText id="password" value="#{addUser.password}"/>
             <h:message for="password" />
-            <br></br><br></br>
-            <h:commandButton action="#{addUser.register}" value="Register" />
-        </h:panelGroup>
+        </h:panelGrid>
+        <h:commandButton action="#{addUser.register}" value="Register" />
     </h:form>  
 </div>   
 </body>  

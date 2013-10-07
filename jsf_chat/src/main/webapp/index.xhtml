@@ -12,27 +12,18 @@ and open the template in the editor.
 </head>  
 <body>  
 <div id="wrapper">  
-    <div id="menu">
-        <h1>CatChat</h1>
-        <a href="jsf/register.xhtml">Sign up</a> 
+    <div id="menu">  
+        <p class="welcome">CatChat<b></b></p>  
+        <h:button outcome="register" value="Register" class="small-button"/>
         <div style="clear:both"></div>  
-        <br></br>
-        <p><img src="resources/img/Cat.jpg" alt="http://images.wikia.com/uncyclopedia/images/f/fa/Cat_using_computer.jpg" width="150" height="100"/></p>
-
     </div>  
-     <h:form>  
-         <h:panelGroup>
-            <h:outputText value="Username:" />
-            <h:inputText id="username" value="#{login.username}"/>
-            <h:message for="username" />
-            <br></br>
-            <h:outputText value="Password:" />
-            <h:inputText id="password" value="#{login.password}"/>
-            <h:message for="password" />
-            <br></br><br></br>
-            <h:commandButton action="#{login.login}" value="Login" />
-         </h:panelGroup>
-    </h:form>
+      
+    <form name="login" action="">  
+        <p>Username: <input name="username" type="text" id="username" size="30" /></p>
+        <p>Password: <input name="password" type="text" id="password" size="30" /></p>
+        <h:button outcome="login" value="Login" class="small-button"/>  
+    </form>  
+    <a href="jsf/chatroom.xhtml">Exit Chat</a> 
 </div>   
 </body>  
 </html> 
