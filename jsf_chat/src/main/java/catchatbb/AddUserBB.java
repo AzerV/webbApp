@@ -55,4 +55,10 @@ public class AddUserBB {
     public void setPassword(String password) {
         this.password = password;
     }
+    
+    public void checkUser(){
+        
+        
+        
+    }
 }

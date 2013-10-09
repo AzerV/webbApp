@@ -14,20 +14,29 @@ and open the template in the editor.
 <body>  
     <ui:composition template="../WEB-INF/template.xhtml">
         <ui:define name="content">      
-    <div id="chatbox"></div>
+    <div id="chatbox"><p>#{message.getmessage()}</p></div>
     <div id="userbox"><p>Online users: </p></div>
       
     <form name="message" action="">  
         <input name="usermsg" type="text" id="usermsg" size="63" />  
         <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />  
     </form>  
-    
-    <p>#{message.getmessage()}</p>
-    
-     
     <br></br>
-    <a href="../index.xhtml">Exit Chat</a>   
             </ui:define>
     </ui:composition>
+     <h:form>  
+         <h:panelGroup>
+            <h:outputText value="Username: " />
+            <h:inputText id="username" value="#{logoutUser.username}"/>
+            <h:message for="username" />
+            <br></br>
+            <h:outputText value="Password: " />
+            <h:inputText id="password" value="#{logoutUser.password}"/>
+            <h:message for="password" />
+            <br></br><br></br>
+            <h:commandButton action="#{logoutUser.logout}" value="LogOut"/>
+            
+         </h:panelGroup>
+    </h:form>
 </body>  
 </html> 

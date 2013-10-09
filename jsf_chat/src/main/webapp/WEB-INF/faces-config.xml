@@ -22,6 +22,17 @@
         </navigation-case>
     </navigation-rule>   
     
+    
+    <!-- ChatRoom page -->
+    <navigation-rule>
+        <from-view-id>/jsf/chatroom.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>LOGOUT_SUCCESS</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+      
+    </navigation-rule>   
+    
     <!-- Register page -->
     <navigation-rule>
       <from-view-id>/jsf/register.xhtml</from-view-id>
