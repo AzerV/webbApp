@@ -28,7 +28,7 @@ public class TestDB {
    
    @Test
     public void testAddUser() {
-       UserAccount u = new UserAccount("Elin", "Elin");
+       UserAccount u = new UserAccount("Elina", "Elin");
        chat.add(u);
        chat.add(new UserAccount("Nora", "Nora"));
        assertTrue(chat.getCount() == 2);

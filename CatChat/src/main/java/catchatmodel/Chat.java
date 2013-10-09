@@ -15,12 +15,16 @@ import java.util.logging.Logger;
 public class Chat extends AbstractDAO<UserAccount, Long>{
     UserEntity ue;
     String pun;
+    ChatRoom chatRoom;
     
     public Chat(String persistenceUnitName) {
         super(UserAccount.class, persistenceUnitName);
         // pun = persistenceUnitName;
         Logger.getAnonymousLogger().log(Level.INFO, "Shop alive {0}", this.hashCode());
-    
+        chatRoom = new ChatRoom();
+    }
+    public ChatRoom getChatRoom(){
+        return chatRoom;
     }
 
     
