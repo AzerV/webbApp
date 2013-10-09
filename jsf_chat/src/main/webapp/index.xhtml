@@ -5,35 +5,37 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">  
 <head>  
 <title>CatChat</title>  
 <link type="text/css" rel="stylesheet" href="resources/css/style.css" />  
 </head>  
 <body>  
-<div id="wrapper">  
-    <div id="menu">
-        <h1>CatChat</h1>
-        <a href="jsf/register.xhtml">Sign up</a> 
-        <br></br>
-        <a href="jsf/chatroom.xhtml">Chatroom</a> 
-        <div style="clear:both"></div>  
-        <br></br>
-        <p><img src="resources/img/Cat.jpg" alt="http://images.wikia.com/uncyclopedia/images/f/fa/Cat_using_computer.jpg" width="200" height="150"/></p>
-    </div>  
-     <h:form>  
-         <h:panelGroup>
-            <h:outputText value="Username: " />
-            <h:inputText id="username" value="#{loginUser.username}"/>
-            <h:message for="username" />
-            <br></br>
-            <h:outputText value="Password: " />
-            <h:inputText id="password" value="#{loginUser.password}"/>
-            <h:message for="password" />
-            <br></br><br></br>
-            <h:commandButton action="#{loginUser.login}" value="Login"/>
-         </h:panelGroup>
-    </h:form>
-</div>   
+    <ui:composition template="WEB-INF/template.xhtml">
+        <ui:define name="content">
+            <div id="menu">
+                <a href="jsf/register.xhtml">Sign up</a> 
+                <br></br>
+                <a href="jsf/chatroom.xhtml">Chatroom</a> 
+                <div style="clear:both"></div>  
+                <br></br>
+                <p><img src="resources/img/Cat.jpg" alt="http://images.wikia.com/uncyclopedia/images/f/fa/Cat_using_computer.jpg" width="200" height="150"/></p>
+            </div>  
+            <h:form>  
+                 <h:panelGroup>
+                    <h:outputText value="Username: " />
+                    <h:inputText id="username" value="#{loginUser.username}"/>
+                    <h:message for="username" />
+                    <br></br>
+                    <h:outputText value="Password: " />
+                    <h:inputText id="password" value="#{loginUser.password}"/>
+                    <h:message for="password" />
+                    <br></br><br></br>
+                    <h:commandButton action="#{loginUser.login}" value="Login"/>
+                 </h:panelGroup>
+            </h:form>
+        </ui:define>
+    </ui:composition>
 </body>  
 </html> 

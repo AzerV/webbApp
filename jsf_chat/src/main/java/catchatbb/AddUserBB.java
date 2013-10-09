@@ -27,6 +27,8 @@ public class AddUserBB {
     
     public String register() {        
         UserAccount user = new UserAccount(username, password);
+        System.out.println(username);
+        System.out.println(password);
         chat = ChatFactory.getChat(PU);
         if(chat.getByName(username)==null){
             chat.add(user);

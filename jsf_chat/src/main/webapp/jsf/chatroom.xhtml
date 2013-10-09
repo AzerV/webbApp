@@ -5,27 +5,25 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">  
 <head>  
 <title>CatChat</title>  
 <link type="text/css" rel="stylesheet" href="../resources/css/style.css" />  
 </head>  
 <body>  
-<div id="chatroom">  
-    <div id="menu">  
-        <p class="welcome">CatChat<b></b></p> 
-        <div style="clear:both"></div>  
-    </div>  
-      
+    <ui:composition template="../WEB-INF/template.xhtml">
+        <ui:define name="content">      
     <div id="chatbox"></div>
-    <div id="userbox"></div>
+    <div id="userbox"><p>Online users: </p></div>
       
     <form name="message" action="">  
         <input name="usermsg" type="text" id="usermsg" size="63" />  
         <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />  
     </form>  
     <br></br>
-    <a href="../index.xhtml">Exit Chat</a> 
-</div>   
+    <a href="../index.xhtml">Exit Chat</a>   
+            </ui:define>
+    </ui:composition>
 </body>  
 </html> 

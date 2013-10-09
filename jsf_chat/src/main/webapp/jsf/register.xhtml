@@ -5,13 +5,15 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">  
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">  
 <head>  
 <title>CatChat</title>  
 <link type="text/css" rel="stylesheet" href="../resources/css/style.css" />  
 </head>  
-<body>  
-<div id="wrapper">  
+<body>
+    <ui:composition template="../WEB-INF/template.xhtml">
+        <ui:define name="content">
     <div id="menu">
         <a href="../index.xhtml">Home</a>  
         <div style="clear:both"></div>  
@@ -30,6 +32,7 @@ and open the template in the editor.
             <h:commandButton action="#{addUser.register}" value="Register" />
         </h:panelGroup>
     </h:form>  
-</div>   
+    </ui:define>
+    </ui:composition>
 </body>  
 </html> 
