@@ -26,7 +26,7 @@ public class TestDB {
         chat = ChatFactory.getChat(TEST_EMBEDDED_PU);
     }
    
-   //@Test
+   @Test
     public void testAddUser() {
        UserAccount u = new UserAccount("Elin", "Elin");
        chat.add(u);
@@ -64,7 +64,7 @@ public class TestDB {
         assertTrue(equals(u2, chat.find(u.getId())));
     } 
      
-     @Test
+     //@Test
      public void testFindUser() {
        UserAccount u2 = new UserAccount("aaa", "aaa");
        chat.add(u2);
