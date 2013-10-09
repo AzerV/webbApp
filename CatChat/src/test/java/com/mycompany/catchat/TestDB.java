@@ -20,9 +20,10 @@ public class TestDB {
     Chat chat;
     final static String PU = "catchat_pu";
     final static String TEST_PU = "catchat_test_pu";
+    final static String TEST_EMBEDDED_PU="catchat_embedded_test_pu";
     @Before // Run before each test
     public void before() {
-        chat = ChatFactory.getChat(TEST_PU);
+        chat = ChatFactory.getChat(TEST_EMBEDDED_PU);
     }
    
    //@Test
