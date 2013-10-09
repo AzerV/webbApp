@@ -22,8 +22,7 @@ and open the template in the editor.
         <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />  
     </form>  
     <br></br>
-            </ui:define>
-    </ui:composition>
+        
      <h:form>  
          <h:panelGroup>
             <h:outputText value="Username: " />
@@ -37,6 +36,9 @@ and open the template in the editor.
             <h:commandButton action="#{logoutUser.logout}" value="LogOut"/>
             
          </h:panelGroup>
+         
     </h:form>
+        </ui:define>
+    </ui:composition>
 </body>  
 </html> 
