@@ -25,10 +25,17 @@ public class AddUserBB {
     final static String PU = "catchat_pu";
     private Chat chat;
     
-    public void register() {        
+    public String register() {        
         UserAccount user = new UserAccount(username, password);
         chat = ChatFactory.getChat(PU);
-        chat.add(user);
+        if(chat.getByName(username)==null){
+            chat.add(user);
+            return "REGISTERED";
+        }
+        else{
+            return "FAILD_TO_REGISTER";
+        }
+        
     }
     
     public String getUsername() {

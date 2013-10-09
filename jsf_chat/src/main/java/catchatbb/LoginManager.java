@@ -25,7 +25,7 @@ public class LoginManager implements Serializable {
     
     public String login() {   
         chat = ChatFactory.getChat(PU);
-        UserAccount user = getByName(username);
+        UserAccount user = chat.getByName(username);
         if(user != null){
             user.setStatus("online");
             chat.update(user);
@@ -33,16 +33,6 @@ public class LoginManager implements Serializable {
         }
         else
             return "LOGIN_FAIL";
-    }
-    
-    public UserAccount getByName(String name) {
-        UserAccount found = null;
-        for (UserAccount u : chat.getRange(0, chat.getCount())) {
-            if (u.getName().equals(name)) {
-                found = u;
-            }
-        }
-        return found;
     }
     
     public String getUsername() {

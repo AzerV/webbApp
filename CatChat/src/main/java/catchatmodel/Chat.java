@@ -28,4 +28,14 @@ public class Chat extends AbstractDAO<UserAccount, Long>{
         return ue;
     }
     
+     public UserAccount getByName(String name) {
+        UserAccount found = null;
+        for (UserAccount u : getRange(0, getCount())) {
+            if (u.getName().equals(name)) {
+                found = u;
+            }
+        }
+        return found;
+    }
+    
 }

@@ -27,7 +27,15 @@
       <from-view-id>/jsf/register.xhtml</from-view-id>
       <navigation-case>
           <from-outcome>home</from-outcome>
-          <to-view-id>index.xhtml</to-view-id>
+          <to-view-id>/index.xhtml</to-view-id>
+      </navigation-case>
+      <navigation-case>
+          <from-outcome>REGISTERED</from-outcome>
+          <to-view-id>/index.xhtml</to-view-id>
+      </navigation-case>
+      <navigation-case>
+          <from-outcome>FAILD_TO_REGISTER</from-outcome>
+          <to-view-id>/jsf/register.xhtml</to-view-id>
       </navigation-case>
     </navigation-rule>   
 </faces-config>
