@@ -7,15 +7,10 @@ package catchatbb;
 import static catchatbb.AddUserBB.PU;
 import catchatmodel.Chat;
 import catchatmodel.ChatFactory;
-import catchatmodel.Username;
-import java.awt.Component;
+import catchatmodel.UserAccount;
 import java.io.Serializable;
-import java.security.Provider.Service;
-import java.util.List;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
-import javax.inject.Scope;
-import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -30,17 +25,19 @@ public class LoginManager implements Serializable {
     
     public String login() {   
         chat = ChatFactory.getChat(PU);
-        Username user = getByName(username);
+        UserAccount user = getByName(username);
         if(user != null){
+            user.setStatus("online");
+            chat.update(user);
             return "LOGIN_SUCCESS";
         }
         else
             return "LOGIN_FAIL";
     }
     
-    public Username getByName(String name) {
-        Username found = null;
-        for (Username u : chat.getRange(0, chat.getCount())) {
+    public UserAccount getByName(String name) {
+        UserAccount found = null;
+        for (UserAccount u : chat.getRange(0, chat.getCount())) {
             if (u.getName().equals(name)) {
                 found = u;
             }

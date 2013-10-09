@@ -16,7 +16,7 @@ import javax.persistence.Id;
  * @author elikarl
  */
 @Entity
-public class Username implements Serializable {
+public class UserAccount implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(nullable = false) 
@@ -25,19 +25,23 @@ public class Username implements Serializable {
     private String name;
     @Column(nullable = false)
     private String password;
+    @Column(nullable = false)
+    private String status;
 
-    public Username() {
+    public UserAccount() {
     }
     
-    public Username(String name, String password){
+    public UserAccount(String name, String password){
         this.name = name;
         this.password = password;
+        status = "offline";
     }
     
-    public Username(long id, String name, String password){
+    public UserAccount(long id, String name, String password){
         this.id = id;
         this.name = name;
         this.password = password;
+        status = "offline";
     }
     
     public long getId(){
@@ -51,6 +55,10 @@ public class Username implements Serializable {
         return name;
     }
     
+    public String getStatus(){
+        return status;
+    }
+    
     public void setId(long id){
         this.id = id;
     }
@@ -60,6 +68,10 @@ public class Username implements Serializable {
     }
     public void setName(String name){
         this.name = name;
+    }
+    
+    public void setStatus(String status){
+        this.status = status;
     }
     
 }

@@ -6,7 +6,7 @@ package com.mycompany.catchat;
 
 import catchatmodel.Chat;
 import catchatmodel.ChatFactory;
-import catchatmodel.Username;
+import catchatmodel.UserAccount;
 import java.util.List;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -32,15 +32,15 @@ public class TestDB {
     @Test
     public void testAddUser() {
         
-       Username u = new Username("elin", "elin");
+       UserAccount u = new UserAccount("elin", "elin");
         
         //IProductCatalogue pc = shop.getProductCatalogue();
        chat.add(u);
-       chat.add(new Username("Nora", "Nora"));
+       chat.add(new UserAccount("Nora", "Nora"));
         
           //  pc.add(new Product(String.valueOf(i), i));
         
-       List<Username> l = chat.getRange(0, 1);
+       List<UserAccount> l = chat.getRange(0, 1);
         //System.out.println(ps.size());
         //System.out.println(ps
        System.out.println(l.size());
