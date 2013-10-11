@@ -36,6 +36,7 @@ public class MessageManager implements Serializable{
         }
         m2 = new Message(author, content);
         list.add(m2);
+        content="";
     }
     
     public List<Message> getAll() {
