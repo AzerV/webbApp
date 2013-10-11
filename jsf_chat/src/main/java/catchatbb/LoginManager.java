@@ -9,6 +9,7 @@ import catchatmodel.Chat;
 import catchatmodel.ChatFactory;
 import catchatmodel.UserAccount;
 import java.io.Serializable;
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -17,7 +18,7 @@ import javax.inject.Named;
  * @author Nora
  */
 @Named("loginUser")
-@SessionScoped
+@ApplicationScoped
 public class LoginManager implements Serializable {
     public static String username;
     private String password;

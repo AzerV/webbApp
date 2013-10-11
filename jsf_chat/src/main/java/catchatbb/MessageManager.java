@@ -13,6 +13,8 @@ import catchatmodel.UserAccount;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 
 /**
@@ -20,37 +22,31 @@ import javax.enterprise.context.SessionScoped;
  * @author Elin
  */
 @Named("message")
-@SessionScoped 
+@SessionScoped
 public class MessageManager implements Serializable{
     private Chat chat;
     private String content;
-    private static String author;
+    private String author;
     private Message m2;
+    private static List<Message> list;
     
     public void addMessage(){
-        chat = ChatFactory.getChat(PU);
-        m2 = new Message(LoginManager.username, content);
-        chat.getChatRoom().add(m2);    
+        if(list == null){
+            list = new ArrayList<Message>();
+        }
+        m2 = new Message(author, content);
+        list.add(m2);
     }
     
     public List<Message> getAll() {
-        if(chat.getChatRoom().getAll()==null){
-            chat.getChatRoom().add(new Message(" "," ")); 
+        if(author==null){
+            author=LoginManager.username;
         }
-        return chat.getChatRoom().getAll();
-    }
-    
-    public String getmessage() {
-        if(m2==null){
-            return "";
+        if(list == null){
+            list = new ArrayList<Message>();
         }
-        Message m = new Message(LoginManager.username, "Hej hej");
-        String s = m2.getAuthor()+": "+m2.getContent();
         
-        return s;
-    }
-    public void ok(){
-        
+        return list;
     }
     
      public String getContent() {

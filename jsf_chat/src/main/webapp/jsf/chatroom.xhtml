@@ -14,10 +14,19 @@ and open the template in the editor.
 <body>  
     <ui:composition template="../WEB-INF/template.xhtml">
         <ui:define name="content">      
-    <div id="chatbox"><p>#{message.getmessage()}</p>
-    
+    <div id="chatbox">
         
-       <!--> <ui:repeat value="#{message.getAll()}" var="m">
+        
+        <ui:repeat value="#{message.getAll()}" var="m">
+            <h:outputText value="#{m.author}" />
+                <h:outputText value=": " />
+            <h:outputText value="#{m.content}" />
+            <br></br>
+        </ui:repeat>
+    
+        <!-->
+        <p>#{message.getmessage()}</p>
+        <ui:repeat value="#{message.getAll()}" var="m">
             <li><h:outputText value="#{m.content}" /></li>
         </ui:repeat>
        </!-->
