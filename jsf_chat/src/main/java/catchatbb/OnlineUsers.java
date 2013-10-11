@@ -10,18 +10,13 @@ import catchatmodel.ChatFactory;
 import catchatmodel.UserAccount;
 import java.util.ArrayList;
 import java.util.List;
-import javax.inject.Named;
-
 /**
  *
  * @author Nora
  */
-@Named("onlineUsers")
 public class OnlineUsers {
     private Chat chat;
     private List<UserAccount> onlineUserList;
-    
-    
     
     public List<UserAccount> getByStatus(String status) {
         onlineUserList = new ArrayList<UserAccount>();

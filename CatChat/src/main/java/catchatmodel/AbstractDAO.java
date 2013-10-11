@@ -38,10 +38,10 @@ public abstract class AbstractDAO<T,K> {
             em.persist(t);
             em.getTransaction().commit();
             
-            System.out.println("JAAAAAAAAAAAAAA");
+            System.out.println("User was added successfully");
         } catch (Exception ex) {
             
-            System.out.println("NEEEEEEEEEEEEEEEEEJ");
+            System.out.println("Failed to add user");
             ex.printStackTrace();
         } finally {
             if (em.getTransaction().isActive()) {
