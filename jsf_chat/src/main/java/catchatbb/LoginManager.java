@@ -19,7 +19,7 @@ import javax.inject.Named;
 @Named("loginUser")
 @SessionScoped
 public class LoginManager implements Serializable {
-    private String username;
+    public static String username;
     private String password;
     private Chat chat;
     

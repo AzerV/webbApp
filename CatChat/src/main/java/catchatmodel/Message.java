@@ -15,17 +15,17 @@ import java.util.Date;
  */
 public class Message {
     
-    	private UserAccount author;
+    	private String author;
 	private String content;
 	private DateFormat time = new SimpleDateFormat("HH:mm:ss");
 	private Date date = Calendar.getInstance().getTime();
 
-	public  Message(UserAccount author, String content) {
+	public  Message(String author, String content) {
 		this.author = author;
 		this.content = content;
 	}
 
-	public UserAccount getAuthor() {
+	public String getAuthor() {
 		return author;
 	}
 

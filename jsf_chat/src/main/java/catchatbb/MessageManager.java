@@ -24,23 +24,49 @@ import javax.enterprise.context.SessionScoped;
 public class MessageManager implements Serializable{
     private Chat chat;
     private String content;
-    //private UserAccount author;
-    private String author;
+    private static String author;
+    private Message m2;
     
     public void addMessage(){
-        //chat = ChatFactory.getChat(PU);
-      //  chat.getChatRoom().add(new Message(author, content));    
+        chat = ChatFactory.getChat(PU);
+        m2 = new Message(LoginManager.username, content);
+        chat.getChatRoom().add(m2);    
     }
     
     public List<Message> getAll() {
-        List<Message> m = new ArrayList<Message>();
+        if(chat.getChatRoom().getAll()==null){
+            chat.getChatRoom().add(new Message(" "," ")); 
+        }
         return chat.getChatRoom().getAll();
     }
+    
     public String getmessage() {
-        return "Här är ett meddelande";
+        if(m2==null){
+            return "";
+        }
+        Message m = new Message(LoginManager.username, "Hej hej");
+        String s = m2.getAuthor()+": "+m2.getContent();
+        
+        return s;
     }
     public void ok(){
         
+    }
+    
+     public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
     
 }
