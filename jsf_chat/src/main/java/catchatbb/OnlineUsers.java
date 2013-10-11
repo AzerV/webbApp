@@ -14,6 +14,7 @@ import java.util.List;
  *
  * @author Nora
  */
+
 public class OnlineUsers {
     private Chat chat;
     private List<UserAccount> onlineUserList;
