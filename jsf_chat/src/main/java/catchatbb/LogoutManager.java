@@ -7,7 +7,6 @@
  */
 package catchatbb;
 import static catchatbb.AddUserBB.PU;
-import static catchatbb.AddUserBB.PU;
 import catchatmodel.Chat;
 import catchatmodel.ChatFactory;
 import catchatmodel.UserAccount;
@@ -23,12 +22,13 @@ import javax.inject.Named;
 @SessionScoped
 public class LogoutManager implements Serializable {
     private String username;
-    private String password;
     private Chat chat;
     
     public String logout() {   
         chat = ChatFactory.getChat(PU);
+        this.username = LoginManager.username;
         UserAccount user = getByName(username);
+        
         if(user != null){
             user.setStatus("offline");
             chat.update(user);
@@ -54,14 +54,6 @@ public class LogoutManager implements Serializable {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }
 

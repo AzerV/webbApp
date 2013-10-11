@@ -38,16 +38,7 @@ and open the template in the editor.
         
      <h:form>  
          <h:panelGroup>
-            <h:outputText value="Username: " />
-            <h:inputText id="username" value="#{logoutUser.username}"/>
-            <h:message for="username" />
-            <br></br>
-            <h:outputText value="Password: " />
-            <h:inputText id="password" value="#{logoutUser.password}"/>
-            <h:message for="password" />
-            <br></br><br></br>
-            <h:commandButton action="#{logoutUser.logout}" value="LogOut"/>
-            
+            <h:commandButton action="#{logoutUser.logout}" value="LogOut"/>         
          </h:panelGroup>
          
     </h:form>
