@@ -5,9 +5,11 @@
 var func = function() {
     return{
         getOnlineUsers: function() {
-            return $.ajax({})
+            return $.ajax({
+                url: "http://localhost:8080/jsf_chat/webresources/onlineUsers/users", type: "GET", dataType: "json"
+            });
         }
-    }
-};
+    };
+}();
 
 
