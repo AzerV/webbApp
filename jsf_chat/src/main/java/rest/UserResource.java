@@ -23,7 +23,7 @@ import javax.ws.rs.core.Response;
 @Path("onlineUsers")
 public class UserResource {
     private Chat chat;
-    private List<UserAccount> onlineUserList;
+    private List<String> onlineUserList;
     final static String PU = "catchat_pu";
     
     @GET
@@ -31,12 +31,12 @@ public class UserResource {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getOnlineUsers() {
         
-        onlineUserList = new ArrayList<UserAccount>();
+        onlineUserList = new ArrayList<String>();
         chat = ChatFactory.getChat(PU);
  
         for (UserAccount u : chat.getRange(0, chat.getCount())) {
             if (u.getStatus().equals("online")) {
-                onlineUserList.add(u);
+                onlineUserList.add(u.getName());
             }
         }
         return Response.ok(onlineUserList).build();
