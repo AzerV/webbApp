@@ -33,14 +33,21 @@ public class StatusManager implements Serializable {
     public String login() {   
         chat = ChatFactory.getChat(PU);
         UserAccount user = chat.getByName(username);
-        if((user != null) && (password.equals(user.getPassword()))){
+        try {
+        if((user != null) && security.PasswordHash.validatePassword(password, user.getPassword())){
             currentuser=username;
             user.setStatus("online");
             chat.update(user);
             return "LOGIN_SUCCESS";
         }
-        else
+              
+              else
             return "LOGIN_FAIL";
+        }
+        catch(Exception e){
+            System.out.println("Error in login");
+            return "EXCEPTION";
+        }
     }
     
     /**

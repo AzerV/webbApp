@@ -13,6 +13,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import security.PasswordHash;
 
 /**
  *
@@ -39,9 +40,14 @@ public class AddUserBB {
     public String register() {
         chat = ChatFactory.getChat(PU);
         if(chat.getByName(username)==null){
-            UserAccount user = new UserAccount(username, password);
+            try{UserAccount user = new UserAccount(username, PasswordHash.createHash(password));
+                  
             chat.add(user);
             return "REGISTER_SUCCESS";
+            }
+            catch(Exception e){
+               return "EXCEPTION" ;
+            }
         }
         else{
             FacesContext.getCurrentInstance().addMessage("takenUsername", new FacesMessage("ERROR: Username already taken."));
