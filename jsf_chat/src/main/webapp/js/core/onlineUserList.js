@@ -11,5 +11,3 @@ var func = function() {
         }
     };
 }();
-
-
