@@ -11,6 +11,7 @@ import catchatmodel.ChatFactory;
 import catchatmodel.Message;
 import catchatmodel.UserAccount;
 import java.io.Serializable;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
@@ -29,6 +30,7 @@ public class MessageManager implements Serializable{
     private String author;
     private Message m2;
     private static List<Message> list;
+    private DateFormat time;
     
     public void addMessage(){
         if(list == null){
@@ -65,5 +67,9 @@ public class MessageManager implements Serializable{
     public void setAuthor(String author) {
         this.author = author;
     }
-    
-}
+        
+    public String getTime() {
+        return m2.getTime();
+	}
+ }
+
