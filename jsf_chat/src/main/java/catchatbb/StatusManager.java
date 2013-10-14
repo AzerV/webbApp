@@ -32,7 +32,7 @@ public class StatusManager implements Serializable {
     public String login() {   
         chat = ChatFactory.getChat(PU);
         UserAccount user = chat.getByName(username);
-        if(user != null){
+        if((user != null) && (password.equals(user.getPassword()))){
             currentuser=username;
             user.setStatus("online");
             chat.update(user);
