@@ -8,6 +8,8 @@ import catchatmodel.Chat;
 import catchatmodel.ChatFactory;
 import catchatmodel.UserAccount;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -28,6 +30,12 @@ public class AddUserBB {
     final static String PU = "catchat_pu";
     private Chat chat;
     
+    /**
+     * If no useraccount with same username already exists, a new useraccount
+     * is created and added to the chat DB.
+     * 
+     * @return navigation strings
+     */
     public String register() {
         chat = ChatFactory.getChat(PU);
         if(chat.getByName(username)==null){
@@ -36,9 +44,9 @@ public class AddUserBB {
             return "REGISTER_SUCCESS";
         }
         else{
+            FacesContext.getCurrentInstance().addMessage("takenUsername", new FacesMessage("ERROR: Username already taken."));
             return "REGISTER_FAIL";
-        }
-        
+        } 
     }
     
     public String getUsername() {

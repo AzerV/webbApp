@@ -25,7 +25,8 @@ public class StatusManager implements Serializable {
     private Chat chat;
     
     /**
-     * Changes useraccount-status to online and forward to chatroom.xhtml if the useraccount is found in database.
+     * Changes useraccount-status to online and forward to chatroom.xhtml if the
+     * useraccount is found in database.
      * 
      * @return navigation strings
      */
@@ -43,7 +44,8 @@ public class StatusManager implements Serializable {
     }
     
     /**
-     * Changes useraccount-status to offline and forward to index.xhtml if the useraccount is found in database.
+     * Changes useraccount-status to offline and forward to index.xhtml if the
+     * useraccount is found in database.
      * 
      * @return navigation strings
      */
