@@ -43,7 +43,7 @@ public class MessageManager implements Serializable{
     
     public List<Message> getAll() {
         if(author==null){
-            author=LoginManager.username;
+            author=StatusManager.username;
         }
         if(list == null){
             list = new ArrayList<Message>();

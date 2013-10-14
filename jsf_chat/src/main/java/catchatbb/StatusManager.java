@@ -9,7 +9,6 @@ import catchatmodel.Chat;
 import catchatmodel.ChatFactory;
 import catchatmodel.UserAccount;
 import java.io.Serializable;
-import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -17,13 +16,18 @@ import javax.inject.Named;
  *
  * @author Nora
  */
-@Named("loginUser")
-@ApplicationScoped
-public class LoginManager implements Serializable {
-    public static String username;
+@Named("status")
+@SessionScoped
+public class StatusManager implements Serializable {
+    protected static String username;
     private String password;
     private Chat chat;
     
+    /**
+     * Changes useraccount-status to online and forward to chatroom.xhtml if the useraccount is found in database.
+     * 
+     * @return navigation strings
+     */
     public String login() {   
         chat = ChatFactory.getChat(PU);
         UserAccount user = chat.getByName(username);
@@ -34,6 +38,24 @@ public class LoginManager implements Serializable {
         }
         else
             return "LOGIN_FAIL";
+    }
+    
+    /**
+     * Changes useraccount-status to offline and forward to index.xhtml if the useraccount is found in database.
+     * 
+     * @return navigation strings
+     */
+    public String logout() {   
+        chat = ChatFactory.getChat(PU);
+        UserAccount user = chat.getByName(username);
+        
+        if(user != null){
+            user.setStatus("offline");
+            chat.update(user);
+            return "LOGOUT_SUCCESS";
+        }
+        else
+            return "LOGOUT_FAIL";
     }
     
     public String getUsername() {
