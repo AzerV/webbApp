@@ -10,6 +10,7 @@ import catchatmodel.UserAccount;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -19,8 +20,10 @@ import javax.validation.constraints.NotNull;
 @RequestScoped
 public class AddUserBB {
     @NotNull
+    @Size(min=1, max=15, message="Username must be 1-15 characters")
     private String username;
     @NotNull
+    @Size(min=7, max=15, message="Password must be 7-15 characters")
     private String password;
     final static String PU = "catchat_pu";
     private Chat chat;
