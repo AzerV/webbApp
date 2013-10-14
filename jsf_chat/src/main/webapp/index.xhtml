@@ -29,7 +29,7 @@ and open the template in the editor.
                     <h:message for="username" />
                     <br></br>
                     <h:outputText value="Password: " />
-                    <h:inputText id="password" value="#{status.password}"/>
+                    <h:inputSecret id="password" value="#{status.password}"/>
                     <h:message for="password" />
                     <br></br><br></br>
                     <h:commandButton action="#{status.login}" value="Login"/>
