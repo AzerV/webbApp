@@ -19,7 +19,8 @@ import javax.inject.Named;
 @Named("status")
 @SessionScoped
 public class StatusManager implements Serializable {
-    protected static String username;
+    private String username;
+    protected static String currentuser;
     private String password;
     private Chat chat;
     
@@ -32,6 +33,7 @@ public class StatusManager implements Serializable {
         chat = ChatFactory.getChat(PU);
         UserAccount user = chat.getByName(username);
         if(user != null){
+            currentuser=username;
             user.setStatus("online");
             chat.update(user);
             return "LOGIN_SUCCESS";

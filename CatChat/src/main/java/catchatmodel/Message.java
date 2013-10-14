@@ -33,7 +33,7 @@ public class Message {
 		return content;
 	}
 
-	public String getTime() {
+            public String getTime() {
 		return time.format(date);
 	}
     
