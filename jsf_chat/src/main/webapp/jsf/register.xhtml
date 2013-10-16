@@ -19,7 +19,7 @@ and open the template in the editor.
         <div style="clear:both"></div>  
     </div>  
       
-    <h:form>  
+    <h:form id="form">  
         <h:panelGroup>
             <h:outputText value="Username: " />
             <h:inputText id="username" value="#{addUser.username}"/>
@@ -29,7 +29,12 @@ and open the template in the editor.
             <h:inputSecret id="password" value="#{addUser.password}"/>
             <h:message for="password" />
             <br></br><br></br>
-            <h:commandButton action="#{addUser.register}" value="Register" />
+            <h:commandButton action="#{addUser.register}" value="Register" /> 
+            <script type="text/javascript">   
+                    window.onload = function() {
+                    document.getElementById('form:username').focus();
+                    }
+                </script>
         </h:panelGroup>
     </h:form>  
     </ui:define>

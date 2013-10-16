@@ -22,7 +22,7 @@ and open the template in the editor.
                 <br></br>
                 <p><img src="resources/img/Cat.jpg" alt="http://images.wikia.com/uncyclopedia/images/f/fa/Cat_using_computer.jpg" width="200" height="150"/></p>
             </div>  
-            <h:form>  
+            <h:form id="form">  
                  <h:panelGroup>
                     <h:outputText value="Username: " />
                     <h:inputText id="username" value="#{status.username}"/>
@@ -34,8 +34,14 @@ and open the template in the editor.
                     <br></br><br></br>
                     <h:commandButton action="#{status.login}" value="Login"/>
                  </h:panelGroup>
+                <script type="text/javascript">   
+                    window.onload = function() {
+                    document.getElementById('form:username').focus();
+                    }
+                </script>
             </h:form>
+            
         </ui:define>
     </ui:composition>
 </body>  
-</html> 
+</html>
