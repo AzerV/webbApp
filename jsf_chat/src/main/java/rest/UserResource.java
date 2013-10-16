@@ -6,6 +6,7 @@ package rest;
 
 import catchatmodel.Chat;
 import catchatmodel.ChatFactory;
+import catchatmodel.IChat;
 
 import catchatmodel.UserAccount;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ import javax.ws.rs.core.Response;
  */
 @Path("onlineUsers")
 public class UserResource {
-    private Chat chat;
+    private IChat chat;
     private List<String> onlineUserList;
     final static String PU = "catchat_pu";
     

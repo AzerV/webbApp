@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author magnu_000
  */
-interface IChatRoom {
+public interface IChatRoom {
     
    
     public void add(Message m);

@@ -6,6 +6,7 @@ package catchatbb;
 
 import catchatmodel.Chat;
 import catchatmodel.ChatFactory;
+import catchatmodel.IChat;
 import catchatmodel.UserAccount;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
@@ -29,7 +30,7 @@ public class AddUserBB {
     @Size(min=7, max=15, message="Password must be 7-15 characters")
     private String password;
     final static String PU = "catchat_pu";
-    private Chat chat;
+    private IChat chat;
     
     /**
      * If no useraccount with same username already exists, a new useraccount

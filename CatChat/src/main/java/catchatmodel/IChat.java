@@ -8,7 +8,8 @@ package catchatmodel;
  *
  * @author magnu_000
  */
-interface IChat {
+public interface IChat extends IDAO<UserAccount,Long>{
      public IChatRoom getChatRoom();
+     public UserAccount getByName(String name);
     
 }

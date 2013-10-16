@@ -29,7 +29,7 @@ public class Chat extends AbstractDAO<UserAccount, Long> implements IChat{
         return chatRoom;
     }
     
-   
+   @Override
      public UserAccount getByName(String name) {
         UserAccount found = null;
         for (UserAccount u : getRange(0, getCount())) {

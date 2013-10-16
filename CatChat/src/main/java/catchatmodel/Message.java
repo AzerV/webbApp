@@ -13,7 +13,7 @@ import java.util.Date;
  *
  * @author Joakim
  */
-public class Message implements IMessage{
+public class Message {
     
     	private String author;
 	private String content;
@@ -25,18 +25,16 @@ public class Message implements IMessage{
 		this.content = content;
 	}
 
-        @Override
-	public String getAuthor() {
+       	public String getAuthor() {
 		return author;
 	}
 
-        @Override
+        
 	public String getContent() {
 		return content;
 	}
 
-        @Override
-            public String getTime() {
+        public String getTime() {
 		return time.format(date);
 	}
     

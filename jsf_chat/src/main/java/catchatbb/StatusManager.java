@@ -7,6 +7,7 @@ package catchatbb;
 import static catchatbb.AddUserBB.PU;
 import catchatmodel.Chat;
 import catchatmodel.ChatFactory;
+import catchatmodel.IChat;
 import catchatmodel.UserAccount;
 import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
@@ -25,7 +26,7 @@ public class StatusManager implements Serializable {
     private String username;
     protected static String currentuser;
     private String password;
-    private Chat chat;
+    private IChat chat;
     
     /**
      * Changes useraccount-status to online and forward to chatroom.xhtml if the

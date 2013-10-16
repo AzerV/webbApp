@@ -16,7 +16,7 @@ public class ChatFactory {
     }
     
         // If initTestData there will be some data to use
-    public static Chat getChat(String persistenceUnitName) {
+    public static IChat getChat(String persistenceUnitName) {
         Chat c = new Chat(persistenceUnitName);
         return c;
     }  

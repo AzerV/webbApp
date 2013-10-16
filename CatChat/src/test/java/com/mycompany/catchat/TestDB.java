@@ -4,6 +4,7 @@
  */
 package com.mycompany.catchat;
 import catchatmodel.Chat;
+import catchatmodel.IChat;
 import catchatmodel.ChatFactory;
 import catchatmodel.Message;
 import catchatmodel.UserAccount;
@@ -17,7 +18,7 @@ import org.junit.Test;
  */
 public class TestDB {
     //static IShop shop;
-    Chat chat;
+    IChat chat;
     final static String PU = "catchat_pu";
     final static String TEST_PU = "catchat_test_pu";
     final static String TEST_EMBEDDED_PU="catchat_embedded_test_pu";

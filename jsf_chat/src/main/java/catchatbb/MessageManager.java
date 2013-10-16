@@ -5,22 +5,15 @@
 package catchatbb;
 
 import javax.inject.Named;
-import static catchatbb.AddUserBB.PU;
-import catchatmodel.Chat;
-import catchatmodel.ChatFactory;
+import catchatmodel.IChat;
+
 import catchatmodel.Message;
-import catchatmodel.UserAccount;
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpSession;
-import org.icefaces.application.PushRenderer;
+
 
 /**
  *
@@ -29,7 +22,7 @@ import org.icefaces.application.PushRenderer;
 @Named("message")
 @SessionScoped
 public class MessageManager implements Serializable{
-    private Chat chat;
+    private IChat chat;
     private String content;
     private String author;
     private Message m2;
