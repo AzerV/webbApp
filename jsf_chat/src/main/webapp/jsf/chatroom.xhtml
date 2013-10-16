@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">  
+    <h:head>  
+        <title>CatChat</title>  
+        <link type="text/css" rel="stylesheet" href="../resources/css/style.css" />
+    </h:head>
+    <h:body>  
+        <ui:composition template="../WEB-INF/template.xhtml">
+            <ui:define name="content"> 
+               <script type="text/javascript" src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+               <script type="text/javascript" src="../js/core/onlineUserList.js"></script>
+               <script type="text/javascript" src="../js/gui/onlineUsers.js"></script>
+               <div id="chatbox"> 
+                    <ui:repeat value="#{message.getAll()}" var="m">
+                        <h:outputText value="(#{m.time}) " />
+                        <b><h:outputText value="#{m.author}: " /></b>
+                        <h:outputText value="#{m.content}" />
+                        <br></br>
+                    </ui:repeat>
+                </div>
+                <div id="userbox">
+                    <button id="update-button">Update</button>
+                    <table id="users">
+                        <thead>
+                            <tr><th>Online users:</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>user</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+               <h:form id="form1">  
+                 <h:panelGroup>
+                    <h:inputText id="meddelandet" size="63" value="#{message.content}"/>
+                    <h:message for="username" />
+                    <h:commandButton action="#{pushBean.push}" value="Send"
+                                 actionListener="#{message.addMessage()}"/>  
+                <script type="text/javascript">   
+                        window.onload = function() {
+                        document.getElementById('form1:meddelandet').focus();
+                        };
+                </script>                   
+                 </h:panelGroup>
+               </h:form>
+                <h:form>  
+                    <h:panelGroup>
+                        <h:commandButton action="#{status.logout}" value="Logout"/>         
+                    </h:panelGroup>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>        
+</html> 

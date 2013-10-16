@@ -36,7 +36,6 @@
             <to-view-id>/index.xhtml</to-view-id>
             <redirect/>
         </navigation-case>
-      
     </navigation-rule>   
     
     <!-- Register page -->

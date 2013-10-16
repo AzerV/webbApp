@@ -6,7 +6,6 @@ package catchatbb;
 
 import javax.inject.Named;
 import catchatmodel.IChat;
-
 import catchatmodel.Message;
 import java.io.Serializable;
 import java.text.DateFormat;
