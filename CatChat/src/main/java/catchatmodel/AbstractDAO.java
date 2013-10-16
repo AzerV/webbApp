@@ -17,7 +17,7 @@ import javax.persistence.criteria.Root;
  *
  * @author hajo
  */
-public abstract class AbstractDAO<T,K> {
+public abstract class AbstractDAO<T,K> implements IDAO<T,K> {
     
     private EntityManagerFactory emf;
     private final Class<T> clazz;
@@ -29,7 +29,8 @@ public abstract class AbstractDAO<T,K> {
     public EntityManagerFactory getemf(){
         return emf;
     }
-
+    
+    @Override
     public void add(T t) {
          EntityManager em = null;
         try {
@@ -52,6 +53,7 @@ public abstract class AbstractDAO<T,K> {
         
     }
 
+     @Override
     public void remove(K id) {
          EntityManager em = null;
         try {
@@ -70,6 +72,7 @@ public abstract class AbstractDAO<T,K> {
         }
     }
 
+      @Override
     public T update(T t) {
         EntityManager em = null;
         T obj = null;
@@ -90,6 +93,7 @@ public abstract class AbstractDAO<T,K> {
         
     }
 
+       @Override
     public T find(K id) {
         EntityManager em = emf.createEntityManager();
         T ret = null;
@@ -110,6 +114,7 @@ public abstract class AbstractDAO<T,K> {
         return ret;
     }
 
+        @Override
     public List<T> getRange(int firstResult, int lastResult) {
         
         EntityManager em = emf.createEntityManager();
@@ -131,6 +136,7 @@ public abstract class AbstractDAO<T,K> {
         //return get(false, maxResults, firstResult);
     }
 
+         @Override
     public int getCount() {
         EntityManager em = emf.createEntityManager();
         int count = -1;

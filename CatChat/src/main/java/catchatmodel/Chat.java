@@ -12,9 +12,10 @@ import java.util.logging.Logger;
  *
  * @author elikarl
  */
-public class Chat extends AbstractDAO<UserAccount, Long>{
+public class Chat extends AbstractDAO<UserAccount, Long> implements IChat{
     String pun;
-    ChatRoom chatRoom;
+    IChatRoom chatRoom;
+    
     
     public Chat(String persistenceUnitName) {
         super(UserAccount.class, persistenceUnitName);
@@ -23,10 +24,12 @@ public class Chat extends AbstractDAO<UserAccount, Long>{
         chatRoom = new ChatRoom();
     }
     
-    public ChatRoom getChatRoom(){
+    @Override
+    public IChatRoom getChatRoom(){
         return chatRoom;
     }
     
+   
      public UserAccount getByName(String name) {
         UserAccount found = null;
         for (UserAccount u : getRange(0, getCount())) {
@@ -36,5 +39,7 @@ public class Chat extends AbstractDAO<UserAccount, Long>{
         }
         return found;
     }
+    
+  
     
 }

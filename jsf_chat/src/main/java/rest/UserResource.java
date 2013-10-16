@@ -6,6 +6,7 @@ package rest;
 
 import catchatmodel.Chat;
 import catchatmodel.ChatFactory;
+
 import catchatmodel.UserAccount;
 import java.util.ArrayList;
 import java.util.List;

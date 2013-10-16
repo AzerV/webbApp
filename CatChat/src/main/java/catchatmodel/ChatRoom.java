@@ -11,13 +11,14 @@ import java.util.List;
  *
  * @author Elin
  */
-public class ChatRoom {
+public class ChatRoom implements IChatRoom {
     private List<Message> elems;
     
     public ChatRoom(){
         elems = new ArrayList<Message>();
     }
 
+    @Override
     public void add(Message m) {
         if (m == null) {
             throw new IllegalArgumentException("Nulls not allowed");
@@ -25,13 +26,16 @@ public class ChatRoom {
         elems.add(m);
     }
     
+    @Override
     public List<Message> getRange(int first, int nItems) {
         return elems.subList(first, first + nItems);
     }
+    @Override
     public List<Message> getAll() {
         return elems;
     }
 
+    @Override
     public int getCount() {
         return elems.size();
     }

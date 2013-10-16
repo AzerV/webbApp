@@ -16,7 +16,7 @@ import javax.persistence.Id;
  * @author elikarl
  */
 @Entity
-public class UserAccount implements Serializable {
+public class UserAccount implements Serializable,IUserAccount {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(nullable = false) 
@@ -44,32 +44,39 @@ public class UserAccount implements Serializable {
         status = "offline";
     }
     
+    @Override
     public long getId(){
         return id;
     }
-    
+    @Override
     public String getPassword(){
         return password;
     }
+    @Override
     public String getName(){
         return name;
     }
     
+    @Override
     public String getStatus(){
         return status;
     }
     
+    @Override
     public void setId(long id){
         this.id = id;
     }
     
+    @Override
     public void setPassword(String password){
         this.password = password;
     }
+    @Override
     public void setName(String name){
         this.name = name;
     }
     
+    @Override
     public void setStatus(String status){
         this.status = status;
     }
