@@ -14,9 +14,13 @@ import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
+import org.icefaces.application.PushRenderer;
 
 /**
  *
@@ -31,6 +35,10 @@ public class MessageManager implements Serializable{
     private Message m2;
     private static List<Message> list;
     private DateFormat time;
+    
+    public MessageManager(){
+        
+    }
     
     public void addMessage(){
         if(list == null){
