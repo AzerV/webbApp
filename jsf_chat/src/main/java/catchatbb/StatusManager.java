@@ -10,6 +10,8 @@ import catchatmodel.ChatFactory;
 import catchatmodel.UserAccount;
 import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 /**
@@ -35,17 +37,16 @@ public class StatusManager implements Serializable {
         chat = ChatFactory.getChat(PU);
         UserAccount user = chat.getByName(username);
         try {
-        if((user != null) && security.PasswordHash.validatePassword(password, user.getPassword())){
-            currentuser=username;
-            user.setStatus("online");
-            chat.update(user);
-            return "LOGIN_SUCCESS";
-        }
-              
-              else
-            return "LOGIN_FAIL";
-        }
-        catch(Exception e){
+            if((user != null) && security.PasswordHash.validatePassword(password, user.getPassword())){
+                currentuser=username;
+                user.setStatus("online");
+                chat.update(user);
+                return "LOGIN_SUCCESS";
+            }else{
+                FacesContext.getCurrentInstance().addMessage("loginFail", new FacesMessage("ERROR: Failed to login."));
+                return "LOGIN_FAIL";
+            }
+        }catch(Exception e){
             System.out.println("Error in login");
             return "EXCEPTION";
         }
