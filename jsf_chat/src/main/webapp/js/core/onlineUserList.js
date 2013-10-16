@@ -14,7 +14,7 @@ var user_model = {
                     success: function(data) {                  
                     },
                     error: function(xhr, status) {
-                        alert("hatada:" + xhr.responseXML);
+                        //alert("hatada:" + xhr.responseXML);
                     },
                     onComplete: function(data) {
                     }

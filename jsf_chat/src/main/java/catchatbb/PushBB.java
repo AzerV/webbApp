@@ -22,7 +22,7 @@ public class PushBB {
     
     @Inject
     private MessageManager messageManager;
-    private static final String PUSH_GROUP = "colorPage";
+    private static final String PUSH_GROUP = "chatPage";
     private String sessionId;
     
      @PostConstruct
