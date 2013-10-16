@@ -41,7 +41,7 @@ and open the template in the editor.
 
                <h:form id="messageform"> 
                  <h:panelGroup>
-                    <h:inputText id="usermess" size="63" value="#{message.content}" onkeydown="if (event.keyCode === 13) document.getElementById('messageform:sendButton').click()"/>
+                    <h:inputText id="username" size="63" value="#{message.content}" onkeydown="if (event.keyCode === 13) document.getElementById('messageform:sendButton').click()"/>
                     <h:message for="username" />
                     <h:commandButton action="#{pushBean.push}" value="Send"
                                  actionListener="#{message.addMessage()}"/>  
