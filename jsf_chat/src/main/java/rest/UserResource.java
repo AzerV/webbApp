@@ -16,7 +16,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 /**
- * Högerklicka på RESTful>HTTP Methods>getOnlineUsers()>Test Resource Uri
+ * Returns an array containing all online users
  * 
  * @author Nora
  */

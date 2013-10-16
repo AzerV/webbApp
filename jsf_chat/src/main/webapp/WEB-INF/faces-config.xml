@@ -19,6 +19,7 @@
         <navigation-case>
             <from-outcome>LOGIN_SUCCESS</from-outcome>
             <to-view-id>/jsf/chatroom.xhtml</to-view-id>
+            <redirect/>
         </navigation-case>
         <navigation-case>
             <from-outcome>LOGIN_FAIL</from-outcome>

@@ -13,7 +13,6 @@ import java.util.logging.Logger;
  * @author elikarl
  */
 public class Chat extends AbstractDAO<UserAccount, Long>{
-    UserEntity ue;
     String pun;
     ChatRoom chatRoom;
     
@@ -23,13 +22,9 @@ public class Chat extends AbstractDAO<UserAccount, Long>{
         Logger.getAnonymousLogger().log(Level.INFO, "Shop alive {0}", this.hashCode());
         chatRoom = new ChatRoom();
     }
+    
     public ChatRoom getChatRoom(){
         return chatRoom;
-    }
-
-    
-    public UserEntity getUserList(){
-        return ue;
     }
     
      public UserAccount getByName(String name) {
