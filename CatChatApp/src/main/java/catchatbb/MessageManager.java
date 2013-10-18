@@ -42,7 +42,7 @@ public class MessageManager implements Serializable{
     }
     
     public List<Message> getAll() {
-        if(author==null){
+        if(author==null || !author.equals(StatusManager.currentuser)){
             author=StatusManager.currentuser;
         }
         if(list == null){
