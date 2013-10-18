@@ -13,6 +13,7 @@ import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
@@ -24,9 +25,11 @@ import javax.inject.Named;
 @SessionScoped
 public class StatusManager implements Serializable {
     private String username;
-    protected static String currentuser;
     private String password;
     private IChat chat;
+    
+     @Inject
+    private MessageManager messageManager;
     
     /**
      * Changes useraccount-status to online and forward to chatroom.xhtml if the
@@ -39,9 +42,9 @@ public class StatusManager implements Serializable {
         UserAccount user = chat.getByName(username);
         try {
             if((user != null) && security.PasswordHash.validatePassword(password, user.getPassword())){
-                currentuser=username;
                 user.setStatus("online");
                 chat.update(user);
+                messageManager.setAuthor(username);
                 return "LOGIN_SUCCESS";
             }else{
                 FacesContext.getCurrentInstance().addMessage("loginFail", new FacesMessage("ERROR: Failed to login."));
@@ -86,5 +89,9 @@ public class StatusManager implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+       public void setMessageBean(MessageManager messageManager) {
+        this.messageManager = messageManager;
     }
 }
