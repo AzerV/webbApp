@@ -5,7 +5,6 @@
 package catchatbb;
 
 import static catchatbb.AddUserBB.PU;
-import catchatmodel.Chat;
 import catchatmodel.ChatFactory;
 import catchatmodel.IChat;
 import catchatmodel.UserAccount;
@@ -27,6 +26,7 @@ public class StatusManager implements Serializable {
     private String username;
     private String password;
     private IChat chat;
+    private PushBB pbb;
     
      @Inject
     private MessageManager messageManager;
@@ -46,12 +46,12 @@ public class StatusManager implements Serializable {
                 chat.update(user);
                 messageManager.setAuthor(username);
                 return "LOGIN_SUCCESS";
-            }else{
+            }
+            else{
                 FacesContext.getCurrentInstance().addMessage("loginFail", new FacesMessage("ERROR: Failed to login."));
                 return "LOGIN_FAIL";
             }
         }catch(Exception e){
-            System.out.println("Error in login");
             return "EXCEPTION";
         }
     }

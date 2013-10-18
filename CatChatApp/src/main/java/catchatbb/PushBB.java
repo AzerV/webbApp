@@ -25,7 +25,7 @@ public class PushBB {
     private static final String PUSH_GROUP = "chatPage";
     private String sessionId;
     
-     @PostConstruct
+    @PostConstruct
     public void postConstruct(){
         PushRenderer.addCurrentSession(PUSH_GROUP);
         FacesContext fcontext = FacesContext.getCurrentInstance();
@@ -33,7 +33,7 @@ public class PushBB {
         sessionId = session.getId();
     }
      
-     public void setMessageBean(MessageManager messageManager) {
+    public void setMessageBean(MessageManager messageManager) {
         this.messageManager = messageManager;
     }
      

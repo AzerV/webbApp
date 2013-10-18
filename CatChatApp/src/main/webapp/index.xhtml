@@ -23,14 +23,14 @@ and open the template in the editor.
             <h:form id="form">  
                  <h:panelGroup>
                     <h:outputText value="Username: " />
-                    <h:inputText id="username" value="#{status.username}"/>
+                    <h:inputText id="username" value="#{status.username}" onkeydown="if (event.keyCode === 13) document.getElementById('form:log').click()"/>
                     <h:message for="username" />
                     <br></br>
                     <h:outputText value="Password: " />
-                    <h:inputSecret id="password" value="#{status.password}"/>
+                    <h:inputSecret id="password" value="#{status.password}" onkeydown="if (event.keyCode === 13) document.getElementById('form:log').click()"/>
                     <h:message for="password" />
                     <br></br><br></br>
-                    <h:commandButton action="#{status.login}" value="Login"/>
+                    <h:commandButton id="log" action="#{status.login}" actionListener="#{pushBean.push}" value="Login" /> 
                  </h:panelGroup>
                 <script type="text/javascript">   
                     window.onload = function() {
