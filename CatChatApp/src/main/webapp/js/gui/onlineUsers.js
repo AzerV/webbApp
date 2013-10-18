@@ -1,5 +1,7 @@
+/**
+ * Writes online users in the online users-table
+ */
 function createOnlineUsersList() {
-    // Use JQuery and HTML
     $("#users tbody").empty();
 
     var users = user_model.getOnlineUsers()['responseJSON'];
@@ -8,10 +10,12 @@ function createOnlineUsersList() {
     }
 }
 
+/**
+ * An update of the online user-table is done when the page is created/refreshed
+ * also update once every second
+ */
 $(document).ready(function() {
-    $("#update-button").on('click', function() {
-        createOnlineUsersList();
-    }); 
     createOnlineUsersList();
+    setInterval(function(){createOnlineUsersList();},1000);
 });
         
