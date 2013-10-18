@@ -47,14 +47,14 @@ and open the template in the editor.
                                  actionListener="#{message.addMessage()}"/>  
                 <script type="text/javascript">   
                         window.onload = function() {
-                        document.getElementById('form1:meddelandet').focus();
+                        document.getElementById('messageform:username').focus();
                         };
                 </script>      
                  </h:panelGroup>
                </h:form>
                 <h:form>  
                     <h:panelGroup>
-                        <h:commandButton action="#{status.logout}" value="Logout"/>         
+                        <h:commandButton action="#{status.logout()}" value="Logout"/>         
                     </h:panelGroup>
                 </h:form>
             </ui:define>

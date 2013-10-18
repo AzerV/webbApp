@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  *
- * @author magnu_000
+ * @author Grupp 17
  */
 public interface IChatRoom {
     

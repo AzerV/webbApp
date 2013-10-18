@@ -6,7 +6,7 @@ package catchatmodel;
 
 /**
  *
- * @author magnu_000
+ * @author Grupp 17
  */
 public interface IChat extends IDAO<UserAccount,Long>{
      public IChatRoom getChatRoom();

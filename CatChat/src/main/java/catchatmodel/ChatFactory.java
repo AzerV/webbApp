@@ -1,13 +1,13 @@
-package catchatmodel;
-
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+package catchatmodel;
+
 
 /**
  *
- * @author elikarl
+ * @author Grupp 17
  */
 public class ChatFactory {
 

@@ -7,7 +7,7 @@ package catchatmodel;
 import java.util.List;
 
 /**
-*Interface for DAO
+ * Grupp 17
 */
 public interface IDAO<T,K> {
     

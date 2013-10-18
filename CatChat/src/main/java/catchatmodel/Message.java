@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  *
- * @author Joakim
+ * @author Grupp 17
  */
 public class Message {
     

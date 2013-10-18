@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author Elin
+ * @author Grupp 17
  */
 public class ChatRoom implements IChatRoom {
     private List<Message> elems;
