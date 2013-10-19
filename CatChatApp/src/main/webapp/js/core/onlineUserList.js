@@ -1,8 +1,12 @@
 /* 
  * returns deferred object containing all online users
  */
-var user_model = {
-    getOnlineUsers: function() {
+//var OnlineUsers = function(users) {
+//    this.users = users;
+//};
+OnlineUsers.prototype = (function(){
+    return {
+        getOnlineUsers: function() {
         return $.ajax(
                 {
                     type: 'GET',
@@ -19,5 +23,7 @@ var user_model = {
                     onComplete: function(data) {
                     }
                 });
-    }
-};
+        }
+    };
+    
+});
