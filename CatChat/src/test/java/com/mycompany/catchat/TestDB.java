@@ -13,21 +13,21 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 /**
- *
+ * Test class for the database
  * @author Grupp 17
  */
 public class TestDB {
-    //static IShop shop;
     IChat chat;
     final static String PU = "catchat_pu";
     final static String TEST_PU = "catchat_test_pu";
     final static String TEST_EMBEDDED_PU="catchat_embedded_test_pu";
+    
     @Before // Run before each test
     public void before() {
         chat = ChatFactory.getChat(TEST_EMBEDDED_PU);
     }
    
-   @Test
+   //@Test
     public void testAddUser() {
        UserAccount u = new UserAccount("Elina", "Elin");
        chat.add(u);
@@ -72,12 +72,12 @@ public class TestDB {
         UserAccount u1 = chat.find(u2.getId());
         assertTrue(equals(u2, u1));
     } 
-    //@Test
+    @Test
     public void testGetByName() {
-        UserAccount u = new UserAccount("banana", "banana");
+        UserAccount u = new UserAccount("user", "password");
         chat.add(u);
-        //List<Username> ps = chat.getByName("banana");
-        //assertTrue(ps.size() == 1);
+        UserAccount ps = chat.getByName("user");
+        assertTrue(ps.getName().equals("user"));
     }
     
     public boolean equals(UserAccount u1, UserAccount u2){

@@ -13,18 +13,11 @@ import java.util.logging.Logger;
  */
 public class Chat extends AbstractDAO<UserAccount, Long> implements IChat{
     String pun;
-    IChatRoom chatRoom;
     
     
     public Chat(String persistenceUnitName) {
         super(UserAccount.class, persistenceUnitName);
         Logger.getAnonymousLogger().log(Level.INFO, "Shop alive {0}", this.hashCode());
-        chatRoom = new ChatRoom();
-    }
-    
-    @Override
-    public IChatRoom getChatRoom(){
-        return chatRoom;
     }
     
    @Override
