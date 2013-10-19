@@ -17,8 +17,8 @@ import javax.validation.constraints.Size;
 import security.PasswordHash;
 
 /**
- *
- * @author Nora
+ * Registers a new user
+ * @author Grupp 17
  */
 @Named("addUser")
 @RequestScoped

@@ -24,16 +24,26 @@ public class Message {
 		this.author = author;
 		this.content = content;
 	}
-
+        /**
+         * 
+         * @return the name of the author
+         */
        	public String getAuthor() {
 		return author;
 	}
 
-        
+        /**
+         * 
+         * @return the content of the message 
+         */
 	public String getContent() {
 		return content;
 	}
 
+        /**
+         * 
+         * @return the current time
+         */
         public String getTime() {
 		return time.format(date);
 	}

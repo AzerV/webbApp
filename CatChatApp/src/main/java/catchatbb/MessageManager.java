@@ -5,47 +5,48 @@
 package catchatbb;
 
 import javax.inject.Named;
-import catchatmodel.IChat;
 import catchatmodel.Message;
 import java.io.Serializable;
-import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.SessionScoped;
 
 
 /**
- *
- * @author Elin
+ * Manages messages from the chat
+ * @author Grupp 17
  */
 @Named("message")
 @SessionScoped
 public class MessageManager implements Serializable{
-    private IChat chat;
     private String content;
     private String author;
-    private Message m2;
-    private static List<Message> list;
-    private DateFormat time;
+    private Message newMess;
+    private static List<Message> MessageList;
     
     public MessageManager(){
         
     }
-    
+    /**
+     * Adds a message to the list
+     */
     public void addMessage(){
-        if(list == null){
-            list = new ArrayList<Message>();
+        if(MessageList == null){
+            MessageList = new ArrayList<Message>();
         }
-        m2 = new Message(author, content);
-        list.add(m2);
+        newMess = new Message(author, content);
+        MessageList.add(newMess);
         content="";
     }
-    
+    /**
+     * 
+     * @return the list with messages 
+     */
     public List<Message> getAll() {
-        if(list == null){
-            list = new ArrayList<Message>();
+        if(MessageList == null){
+            MessageList= new ArrayList<Message>();
         }        
-        return list;
+        return MessageList;
     }
     
      public String getContent() {
@@ -65,7 +66,7 @@ public class MessageManager implements Serializable{
     }
         
     public String getTime() {
-        return m2.getTime();
+        return newMess.getTime();
 	}
  }
 

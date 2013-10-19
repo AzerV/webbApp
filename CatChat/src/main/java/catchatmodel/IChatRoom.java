@@ -7,7 +7,7 @@ package catchatmodel;
 import java.util.List;
 
 /**
- *
+ *Interface to Chatroom
  * @author Grupp 17
  */
 public interface IChatRoom {

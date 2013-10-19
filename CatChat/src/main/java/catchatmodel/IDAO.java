@@ -7,6 +7,9 @@ package catchatmodel;
 import java.util.List;
 
 /**
+ * Interface to AbstractDAO
+ * T is type of elements in container
+ * K is type of id (primary key)
  * Grupp 17
 */
 public interface IDAO<T,K> {
