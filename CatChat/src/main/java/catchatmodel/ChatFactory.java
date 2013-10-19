@@ -4,7 +4,6 @@
  */
 package catchatmodel;
 
-
 /**
  *
  * @author Grupp 17

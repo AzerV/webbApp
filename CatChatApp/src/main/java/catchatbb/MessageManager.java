@@ -13,7 +13,7 @@ import javax.enterprise.context.SessionScoped;
 
 
 /**
- * Manages messages from the chat
+ * Manage messages from the chat
  * @author Grupp 17
  */
 @Named("message")

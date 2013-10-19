@@ -3,10 +3,8 @@
  * and open the template in the editor.
  */
 package com.mycompany.catchat;
-import catchatmodel.Chat;
 import catchatmodel.IChat;
 import catchatmodel.ChatFactory;
-import catchatmodel.Message;
 import catchatmodel.UserAccount;
 import java.util.List;
 import static org.junit.Assert.*;

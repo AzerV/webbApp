@@ -17,7 +17,6 @@ import javax.inject.Named;
 
 /**
  * Manages login and logout functions
- *
  * @author Grupp 17
  */
 @Named("status")

@@ -5,7 +5,7 @@
 package catchatmodel;
 
 /**
- *Interface to Chat
+ * Interface to Chat
  * @author Grupp 17
  */
 public interface IChat extends IDAO<UserAccount,Long>{

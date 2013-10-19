@@ -26,6 +26,10 @@ public class UserResource {
     private List<String> onlineUserList;
     final static String PU = "catchat_pu";
     
+    /**
+     * Returns an array containing all online users
+     * @return 
+     */
     @GET
     @Path("users")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
