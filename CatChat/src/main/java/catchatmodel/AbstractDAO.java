@@ -42,11 +42,7 @@ public abstract class AbstractDAO<T,K> implements IDAO<T,K> {
             em.getTransaction().begin();
             em.persist(t);
             em.getTransaction().commit();
-            
-            System.out.println("User was added successfully");
         } catch (Exception ex) {
-            
-            System.out.println("Failed to add user");
             ex.printStackTrace();
         } finally {
             if (em.getTransaction().isActive()) {
@@ -54,7 +50,6 @@ public abstract class AbstractDAO<T,K> implements IDAO<T,K> {
             }
             em.close();
         }
-        
     }
 
      @Override
@@ -94,7 +89,6 @@ public abstract class AbstractDAO<T,K> implements IDAO<T,K> {
             em.close();
         }
         return obj;
-        
     }
 
        @Override
@@ -113,8 +107,6 @@ public abstract class AbstractDAO<T,K> implements IDAO<T,K> {
             }
             em.close();
         }
-        
-        System.out.println("PRODUKTEN " +ret);
         return ret;
     }
 
@@ -132,12 +124,10 @@ public abstract class AbstractDAO<T,K> implements IDAO<T,K> {
                 q.setFirstResult(firstResult);
             found.addAll(q.getResultList());
         } catch (Exception ex) {
-            //DbExceptionHandler.handle(ex);
         } finally {
             em.close();
         }
         return found;
-        //return get(false, maxResults, firstResult);
     }
 
          @Override
@@ -155,27 +145,5 @@ public abstract class AbstractDAO<T,K> implements IDAO<T,K> {
             em.close();
         }
         return count;
-    }
-    
-       // This uses the criteria API see queries...
-    private List<T> get(boolean all, int maxResults, int firstResult) {
-        EntityManager em = emf.createEntityManager();
-        List<T> found;
-        found = new ArrayList<T>();
-        try {
-            CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(clazz));
-            Query q = em.createQuery(cq);
-            if (!all) {
-                q.setMaxResults(maxResults);
-                q.setFirstResult(firstResult);
-            }
-            found.addAll(q.getResultList());
-        } catch (Exception ex) {
-            //DbExceptionHandler.handle(ex);
-        } finally {
-            em.close();
-        }
-        return found;
     }
 }

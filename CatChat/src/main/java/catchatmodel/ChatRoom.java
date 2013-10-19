@@ -39,5 +39,4 @@ public class ChatRoom implements IChatRoom {
     public int getCount() {
         return elems.size();
     }
-    
 }

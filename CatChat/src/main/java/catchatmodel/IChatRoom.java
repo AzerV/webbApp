@@ -20,7 +20,5 @@ public interface IChatRoom {
     public List<Message> getAll();
 
     public int getCount();
-
-    
     
 }
