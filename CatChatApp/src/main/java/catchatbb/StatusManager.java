@@ -26,7 +26,6 @@ public class StatusManager implements Serializable {
     private String username;
     private String password;
     private IChat chat;
-    private PushBB pbb;
     
      @Inject
     private MessageManager messageManager;

@@ -15,7 +15,11 @@ public class ChatFactory {
     
     }
     
-        // If initTestData there will be some data to use
+    /**
+     * If initTestData there will be some data to use
+     * @param persistenceUnitName
+     * @return 
+     */
     public static IChat getChat(String persistenceUnitName) {
         Chat c = new Chat(persistenceUnitName);
         return c;

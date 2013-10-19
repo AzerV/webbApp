@@ -18,7 +18,6 @@ public class Chat extends AbstractDAO<UserAccount, Long> implements IChat{
     
     public Chat(String persistenceUnitName) {
         super(UserAccount.class, persistenceUnitName);
-        // pun = persistenceUnitName;
         Logger.getAnonymousLogger().log(Level.INFO, "Shop alive {0}", this.hashCode());
         chatRoom = new ChatRoom();
     }

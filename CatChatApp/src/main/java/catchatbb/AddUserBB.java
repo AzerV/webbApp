@@ -4,7 +4,6 @@
  */
 package catchatbb;
 
-import catchatmodel.Chat;
 import catchatmodel.ChatFactory;
 import catchatmodel.IChat;
 import catchatmodel.UserAccount;

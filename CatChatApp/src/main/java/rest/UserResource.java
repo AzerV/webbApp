@@ -4,10 +4,8 @@
  */
 package rest;
 
-import catchatmodel.Chat;
 import catchatmodel.ChatFactory;
 import catchatmodel.IChat;
-
 import catchatmodel.UserAccount;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +18,7 @@ import javax.ws.rs.core.Response;
 /**
  * Returns an array containing all online users
  * 
- * @author Nora
+ * @author Greupp 17
  */
 @Path("onlineUsers")
 public class UserResource {
