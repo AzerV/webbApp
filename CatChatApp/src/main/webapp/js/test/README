@@ -1,0 +1,11 @@
+*** README ***
+
+Using QUnit for JavaScript testing, must run via Server
+same origin policy
+
+To run
+------
+Make sure that the getOnlineUsers() is working. We've had unexplainable errors
+sometimes. The method can usually run if all targets are removed.
+
+Mark tests.html, right click > Run File

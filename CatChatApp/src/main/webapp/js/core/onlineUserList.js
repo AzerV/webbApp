@@ -6,7 +6,7 @@ var user_model = {
         return $.ajax(
                 {
                     type: 'GET',
-                    url: 'http://localhost:8080/jsf_chat/webresources/onlineUsers/users',
+                    url: 'http://localhost:8080/catchat/webresources/onlineUsers/users',
                     data: "{}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
