@@ -3,8 +3,7 @@
  */
 function createOnlineUsersList() {
     $("#users tbody").empty();
-
-    var users = OnlineUsers.getOnlineUsers()['responseJSON'];
+    var users = OnlineUsers.prototype().getOnlineUsers()['responseJSON'];
     for (var i = 0; i < users.length; i++) {
         $("#users tbody").append("<tr><td>" + users[i] + "</td></tr>");
     }
