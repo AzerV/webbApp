@@ -30,7 +30,7 @@ public class StatusManager implements Serializable {
     private MessageManager messageManager;
     
     /**
-     * Changes useraccount-status to online and forward to chatroom.xhtml if the
+     * Changes useraccount-status to online and forwards to chatroom.xhtml if the
      * useraccount is found in database.
      * 
      * @return navigation strings
@@ -55,7 +55,7 @@ public class StatusManager implements Serializable {
     }
     
     /**
-     * Changes useraccount-status to offline and forward to index.xhtml if the
+     * Changes useraccount-status to offline and forwards to index.xhtml if the
      * useraccount is found in database.
      * 
      * @return navigation strings
@@ -73,22 +73,39 @@ public class StatusManager implements Serializable {
             return "LOGOUT_FAIL";
     }
     
+     /**
+     * @return username
+     */
     public String getUsername() {
         return username;
     }
 
+     /**
+     * @param username
+     * 
+     */
     public void setUsername(String username) {
         this.username = username;
     }
-
+   
+    /**
+     * @return password
+     * 
+     */
     public String getPassword() {
         return password;
     }
-
+    
+     /**
+     * @param password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
     
+     /**
+     * @param messageManager
+     */
        public void setMessageBean(MessageManager messageManager) {
         this.messageManager = messageManager;
     }

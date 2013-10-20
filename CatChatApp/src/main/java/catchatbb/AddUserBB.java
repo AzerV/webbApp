@@ -55,25 +55,35 @@ public class AddUserBB {
         } 
     }
     
+     /**
+     * @return username
+     */
     public String getUsername() {
         return username;
     }
 
+     /**
+     * @param username
+     */
     public void setUsername(String username) {
         this.username = username;
     }
 
+     /**
+     * @return password
+     */
     public String getPassword() {
         return password;
     }
 
+     /**
+     * @param password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
     
     public void checkUser(){
-        
-        
-        
+   
     }
 }

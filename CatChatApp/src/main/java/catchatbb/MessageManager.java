@@ -48,23 +48,37 @@ public class MessageManager implements Serializable{
         }        
         return MessageList;
     }
-    
+     /**
+     * @return content
+     */
      public String getContent() {
         return content;
     }
 
+      /**
+     * @param content
+     */
     public void setContent(String content) {
         this.content = content;
     }
 
+     /**
+     * @return author
+     */
     public String getAuthor() {
         return author;
     }
 
+     /**
+     * @param author
+     */
     public void setAuthor(String author) {
         this.author = author;
     }
         
+     /**
+     * @return the time the message was created
+     */
     public String getTime() {
         return newMess.getTime();
 	}

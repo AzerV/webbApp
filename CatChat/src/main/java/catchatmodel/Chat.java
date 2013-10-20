@@ -8,17 +8,30 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * 
+ * 
+ * 
+ * 
  *
  * @author Grupp 17
  */
 public class Chat extends AbstractDAO<UserAccount, Long> implements IChat{
     String pun;
-    
-    
+
+     /**
+     * @param persistenceUnitName
+     */
     public Chat(String persistenceUnitName) {
         super(UserAccount.class, persistenceUnitName);
         Logger.getAnonymousLogger().log(Level.INFO, "Chat alive {0}", this.hashCode());
     }
+    
+ /**
+ * Gets a user by name. 
+ * @param name
+ * @return found
+ * @author Grupp 17
+ */
     
    @Override
      public UserAccount getByName(String name) {
