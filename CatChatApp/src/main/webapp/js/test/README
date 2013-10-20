@@ -5,7 +5,14 @@ same origin policy
 
 To run
 ------
-Make sure that the getOnlineUsers() is working. We've had unexplainable errors
-sometimes. The method can usually run if all targets are removed.
+Create a database named CatChat (username: app, password: app)
+
+Run the program and register 2 unique users. Login both. (This isn't done
+automatially as you register a user, so you must login both users manually)
+
+Make sure that the getOnlineUsers() is working:
+CatChatApp > RESTful Web Services > UserResource > HTTP Method > getOnlineUsers() (right-click > Test Resource Uri)
+We've had unexplainable errors sometimes. So you must restart Netbeans until
+it actually works. We're sorry about the difficulty.
 
 Mark tests.html, right click > Run File

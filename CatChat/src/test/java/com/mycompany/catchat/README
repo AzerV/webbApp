@@ -1,0 +1,7 @@
+*** README ***
+
+To run
+------
+Create a database named CatChat (username: app, password: app)
+
+Rightclick TestDB > Test File

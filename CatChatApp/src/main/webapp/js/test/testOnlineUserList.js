@@ -2,12 +2,13 @@
  * Test of onlineUserList
  */
 
-// Possible test with curl first 
+// OBS! Possible if database contains 2 online users
 asyncTest("OnlineUserList.getOnlineUsers", function() {
-    var deferred = chat.getOnlineUsers();
+    var deferred = chat.getOnlineUsersFromChat();
     deferred.done(function(users) {
-        ok(users.lenght === 1, "Test passed");
-        //ok(true, "Test passed");
+        console.log(users.length);
+        console.log(users);
+        ok(users.length === 2, "Test passed");
         start();
     });
     deferred.fail(function() {

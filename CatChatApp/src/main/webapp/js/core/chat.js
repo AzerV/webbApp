@@ -1,14 +1,13 @@
 /* 
- * The chat as a Singleton
+ * Gets and returns a deferred object of online users
  */
-// Global
 var chat = (function(){
     
-    //var users = new OnlineUsers("http://localhost:8080/catchat/webresources/onlineUsers/users");  
-    //console.log(users);
+    var users = OnlineUsers.prototype().getOnlineUsers();
+
     return {
-        getOnlineUsers : function(){
-    //        return users.getOnlineUsers();
+        getOnlineUsersFromChat : function(){
+            return users;
         }
     };    
 })();

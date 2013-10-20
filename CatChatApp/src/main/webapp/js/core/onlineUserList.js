@@ -1,9 +1,9 @@
 /* 
  * returns deferred object containing all online users
  */
-//var OnlineUsers = function(users) {
-//    this.users = users;
-//};
+var OnlineUsers = function(users) {
+    this.users = users;
+};
 OnlineUsers.prototype = (function(){
     return {
         getOnlineUsers: function() {
