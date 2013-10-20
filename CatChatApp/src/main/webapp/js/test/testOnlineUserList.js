@@ -6,8 +6,6 @@
 asyncTest("OnlineUserList.getOnlineUsers", function() {
     var deferred = chat.getOnlineUsersFromChat();
     deferred.done(function(users) {
-        console.log(users.length);
-        console.log(users);
         ok(users.length === 2, "Test passed");
         start();
     });
