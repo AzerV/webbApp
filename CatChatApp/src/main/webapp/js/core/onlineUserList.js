@@ -18,7 +18,6 @@ OnlineUsers.prototype = (function(){
                     success: function(data) {                  
                     },
                     error: function(xhr, status) {
-                        //alert("hatada:" + xhr.responseXML);
                         console.log("Error in onlineUserList.js");
                     },
                     onComplete: function(data) {
