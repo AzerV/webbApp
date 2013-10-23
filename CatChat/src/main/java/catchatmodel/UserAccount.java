@@ -12,7 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- *UserAccount table in database, has a unique id, a username, a password and a status that can be Online or Offline
+ * UserAccount table in database, has a unique id, a username, a password and a status that can be Online or Offline
  * @author Grupp 17
  */
 @Entity

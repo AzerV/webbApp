@@ -1,7 +1,7 @@
 
 package catchatmodel;
 /**
- *
+ * Used to create a chat
  * @author Grupp 17
  */
 public class ChatFactory {

@@ -8,11 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * 
- * 
- * 
- * 
- *
+ * This class is used to access the database 
  * @author Grupp 17
  */
 public class Chat extends AbstractDAO<UserAccount, Long> implements IChat{
