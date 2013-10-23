@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 /**
- * Test class for the database
+ * Test class for the database. Run one at the time
  * @author Grupp 17
  */
 public class TestDB {
